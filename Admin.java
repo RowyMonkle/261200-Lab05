@@ -18,4 +18,11 @@ public class Admin extends User {
             System.out.println(this.getName());
         }
     }
+    @Override
+    public void displayHappyBirthday() {
+        if (isBirthday()) { 
+            int age = LocalDate.now().getYear() - dob.getYear(); //age calculate
+            System.out.println("Happy birthday " + this.name + "! You are " + age + "!");
+        }
+    }
 }
