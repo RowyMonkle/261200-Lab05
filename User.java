@@ -25,8 +25,22 @@ public class User {
     public void setDob(LocalDate dob) {
         this.dob = dob;
     }
+    public boolean isBirthday() {
+        LocalDate today = LocalDate.now();
+        return today.getMonth() == dob.getMonth() && today.getDayOfMonth() == dob.getDayOfMonth();
+    }
     public void displayInfo() {
         System.out.println("Name: " + name);
         System.out.println("Birthday: " + dob);
+    }
+    public void endOfDisplay() {
+        System.out.println("===============");
+    }
+    public void displayHappyBirthday() { //Happy Birthday
+        if (isBirthday()) {
+            System.out.println("**!! Happy birthday " + this.name + "!!**");
+        } else {
+            System.out.println("Hey," + this.name + " you can't cheat your birth date you know?");
+        }
     }
 }
